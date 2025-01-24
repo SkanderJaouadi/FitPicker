@@ -1,1 +1,6 @@
-*.sqlite*
+# Example .gitignore
+node_modules/
+.env
+*.log
+*.pyc
+__pycache__/
