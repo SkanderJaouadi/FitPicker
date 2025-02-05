@@ -19,19 +19,19 @@ Route::get('/Home', function () {
     ]);
 })->name('home');
 
-
-
+Route::get('/Wardrobe', function () {
+    return Inertia::render('Wardrobe');
+})->name('wardrobe');
+Route::get('/CreateOutfit', function () {
+    return Inertia::render('CreateOutfit');
+})->name('CreateOutfit');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/CreateOutfit', function () {
-        return Inertia::render('CreateOutfit');
-    })->name('CreateOutfit');
-    Route::get('/Wardrobe', function () {
-        return Inertia::render('Wardrobe');
-    })->name('wardrobe');
+    
+    
 });
 
 require __DIR__.'/auth.php';
