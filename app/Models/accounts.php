@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class accounts extends Model
 {
-    protected $table ='accounts'
+    protected $table ='accounts';
     protected $fillable = ['first_name', 'last_name', 'email', 'date_of_birth', 'password' ];
     
     public function woredrobe(){

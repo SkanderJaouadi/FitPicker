@@ -22,49 +22,98 @@ class ClothesController extends Controller
         return($clothe)
     }
 
-    /*update attribue */
+    /* get color */
+    public function getcolor($id,$color){
+        $clothe = $this->getclothe($id);
+        $color = $clothe->color ;
+        return($color)
+    }
+
+    /*update color */
     public function updatecolor($id,$color){
         $clothe = $this->getclothe($id);
         $clothe->color = $color;
         $clothe->save();
     }
 
-    /*update attribue */
+    /*get type */
+    public function updatetype($id,$type){
+        $clothe = $this->getclothe($id);
+        $type = $clothe->type;
+        return($type)
+    }
+
+    /*update type */
     public function updatetype($id,$type){
         $clothe = $this->getclothe($id);
         $clothe->type = $type;
         $clothe->save();
     }
 
-    /*update attribue */
+    /*get size */
+    public function updatesize($id,$size){
+        $clothe = $this->getclothe($id);
+        $size = $clothe->size;
+        return($size)
+    }
+
+    /*update size */
     public function updatesize($id,$size){
         $clothe = $this->getclothe($id);
         $clothe->size = $size;
         $clothe->save();
     }
 
-    /*update attribue */
+    /*get occasion*/
+    public function updatesize($id,$occasion){
+        $clothe = $this->getclothe($id);
+        $occasion = $clothe->occasion;
+        return($occasion)
+    }
+
+    /*update occasion */
     public function updateoccasion($id,$occasion){
         $clothe = $this->getclothe($id);
         $clothe->occasion = $occasion;
         $clothe->save();
     }
 
-    /*update attribue */
+    /*get  tag*/
+    public function updatesize($id,$tag){
+        $clothe = $this->getclothe($id);
+        $tag = $clothe->tag;
+        return($tag)
+    }
+
+    /*update tag */
     public function updatetag($id,$tag){
         $clothe = $this->getclothe($id);
         $clothe->tag = $tag;
         $clothe->save();
     }
 
-    /*update attribue */
+    /*get description */
+    public function updatesize($id,$description){
+        $clothe = $this->getclothe($id);
+        $description = $clothe->description;
+        return($description)
+    }
+
+    /*update description*/
     public function updatedescription($id,$description){
         $clothe = $this->getclothe($id);
         $clothe->description = $description;
         $clothe->save();
     }
 
-    /*update attribue */
+    /*get image_url */
+    public function updatesize($id,$image_url){
+        $clothe = $this->getclothe($id);
+        $image_url = $clothe->image_url;
+        return($)
+    }
+
+    /*update image_url */
     public function updateimage_url($id,$image_url){
         $clothe = $this->getclothe($id);
         $clothe->image_url = $image_url;

@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\outfits;
+use Inertia\Inertia;
 
 class OutfitsController extends Controller
 {
     /*get all outfits */
     public function getoutfits(){
-        $outfits = outfit::all();
-        return($outfits)
+        $outfits = Outfit::all();
+        return response()->json($outfits);
     }
 
     /*get outfit by id*/
@@ -24,10 +26,16 @@ class OutfitsController extends Controller
     public function deleteoutfit($id){
         $outfit = outfit::find($id);
         if(!$outfit){
-            return('error')
+            return('error');
         }
         else{
             $outfit->delete();
         }
+    }
+
+    /*get if favorite */
+    public function getfavorite($id){
+        $outfit = outfit::find($id);
+        return($outfit->is_favorite);
     }
 }
