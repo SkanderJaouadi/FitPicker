@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('name')->notNullable();
             $table->enum('season', ['winter','spring','autumn','summer']);
             $table->string('description');
+            $table->boolean('is_favorite')->default(false);
             
             $table->unsignedBigInteger('clothe_id');
             $table->foreign('clothe_id')->references('id')->on('clothes');

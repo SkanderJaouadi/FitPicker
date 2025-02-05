@@ -8,12 +8,12 @@ class WoredrobesController extends Controller
 {
     /*get woredrobe by id */
     public function getworedrobe($id){
-        $woredrobe =woredrobe::find($id);
+        $woredrobe =woredrobes::find($id);
         if(!$woredrobe){
             return('error');
         }
         else{
-            return($woredrobe)
+            return($woredrobe);
         }
     }
 
@@ -21,7 +21,7 @@ class WoredrobesController extends Controller
     public function getworedrobeclothes($woredrobe_id){
         $woredrobe = $this->getworedrobe($woredrobe_id);
         if(!$woredrobe){
-            return('wrong woredrobe id')
+            return('wrong woredrobe id');
         }
         else{
             $clothes = $woredrobe->clothes;
@@ -33,7 +33,7 @@ class WoredrobesController extends Controller
     public function getworedrobeoutfits($woredrobe_id){
         $woredrobe = $this->getworedrobe($woredrobe_id);
         if(!$woredrobe){
-            return('wrong woredrobe id')
+            return('wrong woredrobe id');
         }
         else{
             $outfits = $woredrobe->outfits;
@@ -45,11 +45,11 @@ class WoredrobesController extends Controller
     public function getworedrobeclothes($woredrobe_id,$clothe_id){
         $woredrobe = $this->getworedrobe($woredrobe_id);
         if(!$woredrobe){
-            return('wrong woredrobe id')
+            return('wrong woredrobe id');
         }
         else{
             $clothes = $woredrobe->clothes->getclothe($clothe_id);
-            return($clothes);
+            return response()->json($clothes);
         }
     }
 
@@ -57,11 +57,11 @@ class WoredrobesController extends Controller
     public function getworedrobeoutfit($woredrobe_id,$outfit_id){
         $woredrobe = $this->getworedrobe($woredrobe_id);
         if(!$woredrobe){
-            return('wrong woredrobe id')
+            return('wrong woredrobe id');
         }
         else{
             $outfit = $woredrobe->outfit->getoutfit($outfit_id);
-            return($outfit);
+            return response()->json($outfits);
         }
     }
 }

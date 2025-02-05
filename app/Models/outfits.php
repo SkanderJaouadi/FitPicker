@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class outfits extends Model
 {
     protected $table ='outfits';
-    protected $fillable=['name','season','description'];
+    protected $fillable=['name','season','description','is_favorite'];
     public function clothes(): HasMany
     {
         return $this->hasMany(clothes::class);
@@ -18,6 +18,8 @@ class outfits extends Model
     {
         return $this->belongsTo(woredrobe::class);
     }
+
+    
 
     use HasFactory;
 }

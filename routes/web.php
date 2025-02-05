@@ -1,23 +1,21 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AccountsController;
+use app\Http\Controllers\ClothesController;
+use App\Http\Controllers\OutfitsController;
+use App\Http\Controllers\WoredrobesController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::middleware('guest')->group(function () {
+
+
     
     Route::get('/',function (){
-        return Inertia::render('WelcomePage');
+        return Inertia::render('HomePage');
     });
-});
-
-Route::get('/Home', function () {
-    return Inertia::render('HomePage',[
-        'isAuthicated' => auth()->check()
-    ]);
-})->name('home');
 
 Route::get('/Wardrobe', function () {
     return Inertia::render('Wardrobe');
@@ -33,5 +31,16 @@ Route::middleware('auth')->group(function () {
     
     
 });
+
+Route::get('/Home', function () {
+    return Inertia::render('HomePage');
+});
+Route::get('/account/{id}', [AccountsController::class, 'getaccountoutfits']);
+
+Route::get('/create-outfit',function (){
+    return Inertia::render('CreateOutfit');
+});
+Route::get('/select-items/{id}',[AccountsController::class, 'getaccountclothes']);
+
 
 require __DIR__.'/auth.php';
