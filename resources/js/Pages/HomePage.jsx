@@ -1,7 +1,7 @@
 
 import Layout from '@/Layouts/Layout';
 import { Head, usePage } from '@inertiajs/react';
-import OutfitPreview from '@/Components/OutfitPreview';
+
 
 export default function HomePage() {
     const {props}=usePage();

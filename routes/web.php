@@ -13,9 +13,9 @@ use Inertia\Inertia;
 
 
     
-    Route::get('/',function (){
-        return Inertia::render('HomePage');
-    });
+Route::get('/',function (){
+    return Inertia::render('WelcomePage');
+});
 
 Route::get('/Wardrobe', function () {
     return Inertia::render('Wardrobe');
@@ -34,12 +34,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/Home', function () {
     return Inertia::render('HomePage');
-});
+})->name('home');
 Route::get('/account/{id}', [AccountsController::class, 'getaccountoutfits']);
 
-Route::get('/create-outfit',function (){
-    return Inertia::render('CreateOutfit');
-});
+
 Route::get('/select-items/{id}',[AccountsController::class, 'getaccountclothes']);
 
 
