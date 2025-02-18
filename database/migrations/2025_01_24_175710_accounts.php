@@ -15,10 +15,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->date('date_of_birth');
             $table->string('password')->notNullable();
-
             $table->unsignedBigInteger('woredrobe_id');
             $table->foreign('woredrobe_id')->references('id')->on('woredrobes');
-
             $table->timestamps();
         });
     }

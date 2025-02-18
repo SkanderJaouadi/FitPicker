@@ -33,6 +33,7 @@ class OutfitsController extends Controller
         }
     }
 
+    
     /*get if favorite */
     public function getfavorite($id){
         $outfit = outfit::find($id);

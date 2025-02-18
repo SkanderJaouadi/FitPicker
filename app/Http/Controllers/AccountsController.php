@@ -87,4 +87,5 @@ class AccountsController extends Controller
         $accountworedrobeid=$account->woredrobe->id;
         $account->woredrobe.getworedrobeclothes($accountworedrobeid);
     }
+    
 }

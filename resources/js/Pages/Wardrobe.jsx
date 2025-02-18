@@ -25,7 +25,7 @@ const Wardrobe = () => {
     };
 
     return (
-        <Layout isAuth={true}>
+        <Layout isAuth={true} active={'Wardrobe'}>
         <Head title="Wardrobe"/>
         <div className="max-w-4xl mx-auto p-6">
             <h1 className="text-3xl font-bold mb-6 text-center">My Wardrobe</h1>
@@ -36,6 +36,7 @@ const Wardrobe = () => {
 
                 {/* Grid for uploaded images */}
                 {images.length > 0 && (
+                    <div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
                         {images.map((image, index) => (
                             <div key={index} className="relative group">
@@ -54,9 +55,10 @@ const Wardrobe = () => {
                         ))}
                        
                     </div>
-                    
+                    <Button className="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white">Submit</Button>
+                </div>    
                 )}
-                 <Button className="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white">Submit</Button>
+                
             </div>
         </div>
         </Layout>

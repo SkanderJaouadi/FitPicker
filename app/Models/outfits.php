@@ -13,6 +13,7 @@ class outfits extends Model
     {
         return $this->hasMany(clothes::class);
     }
+    
 
     public function woredrobe(): BelongsTo
     {

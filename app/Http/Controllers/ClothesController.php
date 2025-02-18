@@ -9,7 +9,7 @@ class ClothesController extends Controller
     /*get all clothes */
     public function index(){
         $clothes = clothe::all();
-        return($clothes)
+        return($clothes);
     }
 
     /*get by id */
@@ -17,16 +17,16 @@ class ClothesController extends Controller
         $clothe = clothe::find($id);
 
         if(!$clothe){
-            return ('error')
+            return ('error');
         }
-        return($clothe)
+        return($clothe);
     }
 
     /* get color */
     public function getcolor($id,$color){
         $clothe = $this->getclothe($id);
         $color = $clothe->color ;
-        return($color)
+        return($color);
     }
 
     /*update color */
@@ -40,7 +40,7 @@ class ClothesController extends Controller
     public function updatetype($id,$type){
         $clothe = $this->getclothe($id);
         $type = $clothe->type;
-        return($type)
+        return($type);
     }
 
     /*update type */
@@ -54,7 +54,7 @@ class ClothesController extends Controller
     public function updatesize($id,$size){
         $clothe = $this->getclothe($id);
         $size = $clothe->size;
-        return($size)
+        return($size);
     }
 
     /*update size */
@@ -68,7 +68,7 @@ class ClothesController extends Controller
     public function updatesize($id,$occasion){
         $clothe = $this->getclothe($id);
         $occasion = $clothe->occasion;
-        return($occasion)
+        return($occasion);
     }
 
     /*update occasion */
@@ -82,7 +82,7 @@ class ClothesController extends Controller
     public function updatesize($id,$tag){
         $clothe = $this->getclothe($id);
         $tag = $clothe->tag;
-        return($tag)
+        return($tag);
     }
 
     /*update tag */
@@ -96,7 +96,7 @@ class ClothesController extends Controller
     public function updatesize($id,$description){
         $clothe = $this->getclothe($id);
         $description = $clothe->description;
-        return($description)
+        return($description);
     }
 
     /*update description*/
@@ -110,7 +110,7 @@ class ClothesController extends Controller
     public function updatesize($id,$image_url){
         $clothe = $this->getclothe($id);
         $image_url = $clothe->image_url;
-        return($)
+        return($image_url);
     }
 
     /*update image_url */
